@@ -1,5 +1,5 @@
-import sqlite3 from "sqlite3";
-import sqlite from "sqlite";
+const sqlite3 = require("sqlite3");
+const sqlite = require("sqlite");
 
 async function open() {
     const db = await sqlite.open({
