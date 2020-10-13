@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const {} = require("../database/database");
 
+router.post("/login", (req, res) => {
+  const { } = req.body;
+})
+
 router.get("/bans", (req, res) => {
   
 });

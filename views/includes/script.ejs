@@ -1,0 +1,22 @@
+<script>
+    function deleteIp() {
+        const modalDelete = document.getElementById("modal-delete");
+        modalDelete.classList.remove("hidden");
+    }
+
+    function cancelDeleteIp() {
+        const modalDelete = document.getElementById("modal-delete");
+        modalDelete.classList.add("hidden");
+    }
+
+    function openMenu() {
+        const profileMenu = document.getElementById("profile-menu");
+        profileMenu.classList.toggle("hidden");
+        profileMenu.style.opacity = "1";
+    }
+
+    function openMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+    }
+</script>

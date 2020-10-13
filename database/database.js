@@ -9,4 +9,4 @@ async function open() {
     return db;
 }
 
-export { open }
+module.exports =  { open }

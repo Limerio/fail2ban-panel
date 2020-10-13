@@ -1,5 +1,7 @@
+const passport = require("passport");
 const router = require("express").Router();
-const isAuth = require("../utils/isAuth.js");
+
+router.get("/", (req, res) => res.redirect("/login"))
 
 router.get("/login", (req, res) => {
     res.render("login", {
@@ -7,8 +9,18 @@ router.get("/login", (req, res) => {
     })
 });
 
-router.get("/panel", isAuth, (req, res) => {
-    res.render("panel")
+router.post("/login", (req, res, next) => {
+    passport.authenticate("local", {
+    successRedirect: "/panel",
+    failureRedirect: "/login",
+  })(req, res, next);
 })
+
+router.get("/logout",  (req, res) =>  {
+    req.logout();
+    res.redirect("/login")
+});
+
+router.use("/panel", require("./panel"))
 
 module.exports = router;
