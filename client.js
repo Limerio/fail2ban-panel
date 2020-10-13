@@ -9,6 +9,7 @@ app.set("view engine", "ejs")
 app.engine("ejs", require("ejs").renderFile)
 
 app.use("/", require("./routes/index.js"));
+app.use("/api", require("./routes/api.js"));
 
 console.clear();
 app.listen(port, () => console.log(`Connected to ${port}`))
