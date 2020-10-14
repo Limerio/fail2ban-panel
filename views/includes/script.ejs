@@ -8,10 +8,6 @@ var ipdelete;
         modalDelete.classList.remove("hidden");
     }
 
-    function sureDeleteIp() {
-        fetch("/panel/banip/delete/"+ipdelete, { method: "DELETE"})
-    }
-
     function cancelDeleteIp() {
         const modalDelete = document.getElementById("modal-delete");
         modalDelete.classList.add("hidden");
