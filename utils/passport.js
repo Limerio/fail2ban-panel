@@ -17,10 +17,10 @@ module.exports = (passport) => {
   );
 
   passport.serializeUser(function (user, done) {
-    done(null, user.username);
+    done(null, user);
   });
 
-  passport.deserializeUser(function (username, done) {
-      done(null, username);
+  passport.deserializeUser(function (user, done) {
+      done(null, user);
   });
 };

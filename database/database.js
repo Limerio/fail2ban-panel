@@ -1,12 +1,25 @@
 const sqlite3 = require("sqlite3");
 const sqlite = require("sqlite");
 
-async function open() {
-    const db = await sqlite.open({
-        filename: "",
-        driver: sqlite3.Database
-    });
-    return db;
-}
+module.exports = class Database {
+    constructor() {
+        this.db = sqlite.open({
+            filename: "",
+            driver: sqlite3.Database
+        });
+    }
 
-module.exports =  { open }
+    get open() {
+        return this.db;
+    }
+
+    static get bansList() {
+        const result = this.db.get("");
+        return result
+    }
+
+    static async bansList() {
+        const result = await this.db.get("");
+        return result
+    }
+}
