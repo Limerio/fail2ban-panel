@@ -25,7 +25,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", require("./routes/index.js"));
-app.use("/api", require("./routes/api.js"));
 
 console.clear();
 app.listen(port, () => console.log(`Connected to ${port}`))
